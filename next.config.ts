@@ -2,8 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
+    // Temporarily disable ESLint during builds due to flatCache compatibility issue
     ignoreDuringBuilds: true,
   },
   images: {
