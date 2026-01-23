@@ -1,14 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
   basePath: '/Foliaro',
   eslint: {
     // Temporarily disable ESLint during builds due to flatCache compatibility issue
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
