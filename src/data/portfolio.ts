@@ -3,276 +3,325 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 export const portfolioData: Portfolio = {
   personalInfo: {
-    name: "Your Name",
-    title: "Full Stack Developer",
-    bio: "I'm a passionate full-stack developer with expertise in modern web technologies. I love creating beautiful, functional, and user-friendly applications that solve real-world problems.",
-    avatar: placeholderImages.avatar,
-    resume: "/resume.pdf",
-    tagline: "Building the web, one pixel at a time",
-    yearsOfExperience: 5
+    name: "Ritika Mishra",
+    title: "Full Stack Developer | AI/IoT Engineer",
+    bio: "Building data-driven health products: biosignal visualization, signal processing, and in-browser ML training. Hackathon enthusiast and open-source contributor (HacktoberFest'23, GSSoC'23) with 50+ projects on GitHub.",
+    avatar: "/images/RitikaMishra.jpeg",
+    resume: "https://drive.google.com/file/d/12XcU6wWOhjkmWTtRLAuO1YVovbpxSaIO/view?usp=sharing",
+    tagline: "Real-time biosignals with browser-first ML",
+    yearsOfExperience: 2
   },
   contact: {
-    email: "your.email@example.com",
-    phone: "+1 (555) 123-4567",
-    location: "San Francisco, CA",
-    linkedin: "https://linkedin.com/in/yourname",
-    github: "https://github.com/yourusername",
-    website: "https://yourwebsite.com",
-    twitter: "https://twitter.com/yourusername"
+    email: "ritikamishra8081@gmail.com",
+    phone: "+91 80817 42805",
+    location: "Delhi, India",
+    linkedin: "https://www.linkedin.com/in/ritika-mishra-a965251bb/",
+    github: "https://github.com/Ritika8081",
+    website: "https://ritika8081.github.io"
   },
   skills: [
     {
       id: "1",
-      name: "TypeScript",
-      category: "languages",
-      proficiency: 5,
-      yearsOfExperience: 4,
-      icon: "typescript"
+      name: "Next.js",
+      category: "frameworks",
+      proficiency: 4,
+      yearsOfExperience: 2,
+      icon: "nextjs"
     },
     {
       id: "2",
       name: "React",
       category: "frontend",
-      proficiency: 5,
-      yearsOfExperience: 4,
+      proficiency: 4,
+      yearsOfExperience: 2,
       icon: "react"
     },
     {
       id: "3",
-      name: "Next.js",
-      category: "frameworks",
-      proficiency: 5,
-      yearsOfExperience: 3,
-      icon: "nextjs"
+      name: "TypeScript",
+      category: "languages",
+      proficiency: 4,
+      yearsOfExperience: 2,
+      icon: "typescript"
     },
     {
       id: "4",
       name: "Node.js",
       category: "backend",
       proficiency: 4,
-      yearsOfExperience: 4,
+      yearsOfExperience: 2,
       icon: "nodejs"
     },
     {
       id: "5",
-      name: "TailwindCSS",
-      category: "frontend",
-      proficiency: 5,
-      yearsOfExperience: 3,
-      icon: "tailwind"
+      name: "Express",
+      category: "backend",
+      proficiency: 4,
+      yearsOfExperience: 2,
+      icon: ""
     },
     {
       id: "6",
-      name: "PostgreSQL",
-      category: "database",
-      proficiency: 4,
-      yearsOfExperience: 3,
-      icon: "postgresql"
+      name: "TensorFlow.js",
+      category: "frameworks",
+      proficiency: 3,
+      yearsOfExperience: 1,
+      icon: ""
     },
     {
       id: "7",
+      name: "WebSockets",
+      category: "backend",
+      proficiency: 3,
+      yearsOfExperience: 2,
+      icon: ""
+    },
+    {
+      id: "8",
+      name: "Web Workers",
+      category: "frontend",
+      proficiency: 3,
+      yearsOfExperience: 1,
+      icon: ""
+    },
+    {
+      id: "9",
+      name: "IndexedDB",
+      category: "database",
+      proficiency: 3,
+      yearsOfExperience: 1,
+      icon: ""
+    },
+    {
+      id: "10",
       name: "MongoDB",
       category: "database",
-      proficiency: 4,
+      proficiency: 3,
       yearsOfExperience: 2,
       icon: "mongodb"
     },
     {
-      id: "8",
-      name: "Python",
-      category: "languages",
+      id: "11",
+      name: "Git",
+      category: "tools",
       proficiency: 4,
-      yearsOfExperience: 5,
-      icon: "python"
+      yearsOfExperience: 3,
+      icon: ""
     },
     {
-      id: "9",
+      id: "12",
       name: "Docker",
       category: "tools",
-      proficiency: 3,
-      yearsOfExperience: 2,
+      proficiency: 2,
+      yearsOfExperience: 1,
       icon: "docker"
-    },
-    {
-      id: "10",
-      name: "AWS",
-      category: "tools",
-      proficiency: 3,
-      yearsOfExperience: 2,
-      icon: "aws"
     }
   ],
   projects: [
     {
-      id: "1",
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with real-time inventory management and payment processing.",
-      longDescription: "Built a comprehensive e-commerce solution using Next.js and TypeScript. Features include user authentication, product catalog, shopping cart, order management, payment integration with Stripe, real-time inventory updates, admin dashboard, and analytics. The platform handles thousands of products and processes hundreds of orders daily.",
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Stripe", "TailwindCSS", "Prisma", "Redis"],
-      image: placeholderImages.ecommerceMain,
-      images: [placeholderImages.ecommerce1, placeholderImages.ecommerce2, placeholderImages.ecommerce3],
-      githubUrl: "https://github.com/yourusername/ecommerce-platform",
-      liveUrl: "https://ecommerce-demo.vercel.app",
-      category: "web",
-      featured: true,
-      createdDate: "2024-01-15",
-      completedDate: "2024-06-30",
-      status: "completed",
-      challenges: [
-        "Implementing real-time inventory synchronization",
-        "Optimizing database queries for large product catalogs",
-        "Ensuring PCI compliance for payment processing"
-      ],
-      learnings: [
-        "Advanced PostgreSQL optimization techniques",
-        "Real-time data synchronization with WebSockets",
-        "Security best practices for financial applications"
-      ]
-    },
-    {
-      id: "2",
-      title: "AI-Powered Task Manager",
-      description: "Smart task management app with AI-driven prioritization and scheduling suggestions.",
-      longDescription: "Developed an intelligent task management application that uses machine learning to analyze user behavior and suggest optimal task prioritization and scheduling. Features include natural language task entry, smart categorization, deadline prediction, productivity analytics, and integration with popular calendar applications.",
-      technologies: ["React", "TypeScript", "Python", "FastAPI", "OpenAI API", "PostgreSQL", "Docker"],
-      image: placeholderImages.taskmanagerMain,
-      images: [placeholderImages.taskmanager1, placeholderImages.taskmanager2, placeholderImages.taskmanager3],
-      githubUrl: "https://github.com/yourusername/ai-task-manager",
-      liveUrl: "https://smart-tasks.vercel.app",
-      category: "ai",
-      featured: true,
-      createdDate: "2024-03-01",
-      completedDate: "2024-08-15",
-      status: "completed",
-      challenges: [
-        "Training accurate priority prediction models",
-        "Handling natural language processing for task entry",
-        "Balancing AI suggestions with user preferences"
-      ],
-      learnings: [
-        "Machine learning model deployment and scaling",
-        "Natural language processing techniques",
-        "User experience design for AI-powered features"
-      ]
-    },
-    {
-      id: "3",
-      title: "Real-Time Analytics Dashboard",
-      description: "Interactive dashboard for monitoring business metrics with real-time data visualization.",
-      longDescription: "Created a comprehensive analytics dashboard for business intelligence with real-time data processing and interactive visualizations. The dashboard aggregates data from multiple sources, provides customizable widgets, supports real-time notifications, and includes advanced filtering and export capabilities.",
-      technologies: ["Next.js", "D3.js", "WebSockets", "Node.js", "MongoDB", "Redis", "Chart.js"],
+      id: "rpeak",
+      title: "Rpeak - Real-Time ECG AI Analysis",
+      description: "Browser-based ECG acquisition, visualization, and CNN heartbeat classification aligned to AAMI EC57.",
+      longDescription: "Designed a Next.js application that streams ECG signals via Web Serial/WebSockets, visualizes them in real time with WebGL, and runs TensorFlow.js 1D CNN inference and retraining fully in the browser. Added data capture to IndexedDB, session playback, and exports to support clinical-grade workflows.",
+      technologies: ["Next.js", "React", "TypeScript", "TensorFlow.js", "Web Serial API", "WebSockets", "Web Workers", "WebGL", "IndexedDB"],
       image: placeholderImages.dashboardMain,
       images: [placeholderImages.dashboard1, placeholderImages.dashboard2, placeholderImages.dashboard3],
-      githubUrl: "https://github.com/yourusername/analytics-dashboard",
-      liveUrl: "https://analytics-demo.vercel.app",
-      category: "web",
+      githubUrl: "https://github.com/Ritika8081/Rpeak/",
+      liveUrl: "https://ritika8081.github.io/Rpeak/",
+      category: "ai",
       featured: true,
-      createdDate: "2024-05-01",
-      status: "in-progress",
-      challenges: [
-        "Processing large datasets in real-time",
-        "Creating responsive data visualizations",
-        "Implementing efficient caching strategies"
-      ],
-      learnings: [
-        "Advanced data visualization techniques",
-        "Real-time data streaming architecture",
-        "Performance optimization for data-heavy applications"
-      ]
-    },
-    {
-      id: "4",
-      title: "Mobile Fitness Tracker",
-      description: "React Native app for tracking workouts, nutrition, and health metrics.",
-      longDescription: "Developed a comprehensive fitness tracking mobile application using React Native. Features include workout logging, nutrition tracking, progress visualization, social sharing, custom workout plans, integration with wearable devices, and offline functionality for uninterrupted usage.",
-      technologies: ["React Native", "TypeScript", "Firebase", "Expo", "Redux", "SQLite"],
-      image: placeholderImages.fitnessMain,
-      images: [placeholderImages.fitness1, placeholderImages.fitness2, placeholderImages.fitness3],
-      githubUrl: "https://github.com/yourusername/fitness-tracker",
-      liveUrl: "https://fitness-app-demo.expo.dev",
-      category: "mobile",
-      featured: false,
       createdDate: "2024-07-01",
       status: "in-progress",
       challenges: [
-        "Implementing offline-first architecture",
-        "Integrating with various fitness APIs",
-        "Optimizing battery usage for background tracking"
+        "Maintaining low-latency streaming and visualization in the browser",
+        "Training a robust 1D CNN for multi-class ECG beat classification",
+        "Managing local session storage and replays with IndexedDB"
       ],
       learnings: [
-        "Mobile app performance optimization",
-        "Offline data synchronization patterns",
-        "Health data privacy and security requirements"
+        "Browser-first ML deployment with TensorFlow.js",
+        "Signal normalization and windowing for ECG data",
+        "Building resilient real-time pipelines with Web Workers"
+      ]
+    },
+    {
+      id: "gyroscop",
+      title: "Gyroscop - Rotation-Invariant Motion Detection",
+      description: "Edge motion classifier on BLE IMU data with <10 ms latency and orientation-proof features.",
+      longDescription: "Built an offline gyroscope-based motion classifier using TensorFlow.js. Implemented orientation-invariant feature engineering (23+ features), data collection, model training, and on-device inference for BLE wearables to keep latency under 10 ms.",
+      technologies: ["TensorFlow.js", "TypeScript", "BLE", "WebSockets", "Feature Engineering"],
+      image: placeholderImages.fitnessMain,
+      images: [placeholderImages.fitness1, placeholderImages.fitness2, placeholderImages.fitness3],
+      githubUrl: "https://github.com/Ritika8081/ml-gyro-motion",
+      liveUrl: "",
+      category: "ai",
+      featured: true,
+      createdDate: "2024-10-01",
+      completedDate: "2024-12-15",
+      status: "completed",
+      challenges: [
+        "Ensuring rotation-invariant features across device orientations",
+        "Keeping inference latency under 10 ms on edge hardware",
+        "Balancing model size with accuracy for offline use"
+      ],
+      learnings: [
+        "Efficient feature pipelines for IMU time-series",
+        "Latency profiling and optimization for edge inference",
+        "Data collection strategies for motion-class datasets"
+      ]
+    },
+    {
+      id: "cortex",
+      title: "CortEx - Real-Time Neurofeedback (Frontend)",
+      description: "Fast Next.js UI for BLE EEG/ECG with Web Workers, IndexedDB, offline PWA, and jsPDF exports.",
+      longDescription: "Implemented the frontend for a neurofeedback tool handling BLE EEG/ECG streams. Offloaded filtering and inference to Web Workers, added Canvas/WebGL plotting, offline-first PWA shell, and IndexedDB session storage with export flows for clinicians and researchers.",
+      technologies: ["Next.js", "TypeScript", "Web Workers", "WebGL", "IndexedDB", "PWA"],
+      image: "/images/Cortex.png",
+      images: ["/images/Cortex.png"],
+      githubUrl: "https://ritika8081.github.io/CortEX/",
+      liveUrl: "https://ritika8081.github.io/CortEX/",
+      category: "web",
+      featured: true,
+      createdDate: "2024-08-01",
+      status: "in-progress",
+      challenges: [
+        "Keeping visualization smooth while running inference in workers",
+        "Persisting and replaying multi-channel biosignal sessions",
+        "Packaging offline/PWA support for field usage"
+      ],
+      learnings: [
+        "Worker-based signal pipelines",
+        "Canvas/WebGL rendering for biosignals",
+        "Offline-first UX for scientific tools"
+      ]
+    },
+    {
+      id: "chords",
+      title: "Chords-Web - Bio-Potential Streaming Platform",
+      description: "Open-source EMG/ECG/EEG/EOG streaming with low-latency bidirectional comms and IndexedDB capture.",
+      longDescription: "Built a browser platform for multi-signal streaming that captures, stores, and replays sessions to accelerate ML dataset creation. Added bidirectional control channels, device management, and UX tuned for researchers capturing biosignals.",
+      technologies: ["Next.js", "TypeScript", "WebSockets", "IndexedDB", "PWA"],
+      image: placeholderImages.ecommerceMain,
+      images: [placeholderImages.ecommerce1, placeholderImages.ecommerce2, placeholderImages.ecommerce3],
+      githubUrl: "https://ritika8081.github.io/Chords-Web/",
+      liveUrl: "https://ritika8081.github.io/Chords-Web/",
+      category: "web",
+      featured: false,
+      createdDate: "2024-05-01",
+      status: "completed",
+      challenges: [
+        "Reducing streaming latency while keeping recordings lossless",
+        "Designing a UX that works for multiple biosignal modalities",
+        "Persisting long-running sessions safely in the browser"
+      ],
+      learnings: [
+        "Low-latency bidirectional WebSocket patterns",
+        "Session durability with IndexedDB",
+        "Optimizing streaming UI for scientific users"
+      ]
+    },
+    {
+      id: "hackathons-oss",
+      title: "Hackathons and Open Source",
+      description: "Showcased problem-solving at GFG hackathons and contributed in HacktoberFest'23 and GSSoC'23 with 50+ GitHub projects.",
+      longDescription: "Participated in GFG hackathons to build and demo solutions under time constraints, collaborated in HacktoberFest'23 and GSSoC'23, and maintained a GitHub portfolio of 50+ projects focused on web, ML, and realtime signal tooling.",
+      technologies: ["GitHub", "Open Source", "Hackathons", "TypeScript", "React", "Node.js"],
+      image: placeholderImages.taskmanagerMain,
+      images: [placeholderImages.taskmanager1, placeholderImages.taskmanager2, placeholderImages.taskmanager3],
+      githubUrl: "https://github.com/Ritika8081",
+      liveUrl: "https://ritika8081.github.io",
+      category: "other",
+      featured: false,
+      createdDate: "2023-01-01",
+      status: "completed",
+      challenges: [
+        "Delivering working prototypes within hackathon time limits",
+        "Coordinating contributions across multiple open-source repos",
+        "Balancing feature scope with quality for community PRs"
+      ],
+      learnings: [
+        "Rapid problem framing and solution design",
+        "Open-source collaboration workflows",
+        "Maintaining project quality while iterating quickly"
+      ]
+    },
+    {
+      id: "property-app",
+      title: "Property Listing App (MERN)",
+      description: "Production-ready real estate platform with auth, Razorpay payments, and real-time chat.",
+      longDescription: "Developed a MERN application for property listings with secure email/Google authentication, listing CRUD, search and filtering UX, Razorpay payment integration, and socket-based chat to connect buyers and agents.",
+      technologies: ["MongoDB", "Express", "React", "Node.js", "TypeScript", "Razorpay", "WebSockets"],
+      image: placeholderImages.fitnessMain,
+      images: [placeholderImages.fitness1, placeholderImages.fitness2, placeholderImages.fitness3],
+      githubUrl: "https://real-estate-application-law1.onrender.com/",
+      liveUrl: "https://real-estate-application-law1.onrender.com/",
+      category: "web",
+      featured: false,
+      createdDate: "2023-09-01",
+      completedDate: "2023-11-30",
+      status: "completed",
+      challenges: [
+        "Integrating secure payments with Razorpay",
+        "Delivering responsive UI and fast search",
+        "Keeping real-time chat lightweight for users"
+      ],
+      learnings: [
+        "Production hardening for MERN stacks",
+        "Payment gateway integration patterns",
+        "Accessible, responsive component design"
       ]
     }
   ],
   experience: [
     {
       id: "1",
-      company: "Tech Innovations Inc.",
-      position: "Senior Full Stack Developer",
-      startDate: "2022-01-15",
-      description: "Lead developer for multiple high-impact web applications serving thousands of users daily.",
+      company: "Upside Down Lab",
+      position: "Software Developer - Full Stack & AI/IoT Engineer",
+      startDate: "2024-07-01",
+      description: "Building browser-first health products for ECG/EEG acquisition, visualization, and ML.",
       achievements: [
-        "Increased application performance by 40% through code optimization and caching strategies",
-        "Led a team of 4 developers in migrating legacy PHP applications to modern React/Node.js stack",
-        "Implemented CI/CD pipelines reducing deployment time from hours to minutes"
+        "Designed Rpeak for real-time ECG streaming, visualization, and CNN heartbeat classification",
+        "Built CortEx frontend with worker-based signal processing, offline PWA, and WebGL charts",
+        "Created Gyroscop edge pipeline with rotation-invariant features and <10 ms inference",
+        "Hackathon enthusiast: showcased solutions at GFG hackathons",
+        "Open-source contributor (HacktoberFest'23, GSSoC'23) with 50+ GitHub projects"
       ],
-      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Docker"],
+      technologies: ["Next.js", "React", "TypeScript", "TensorFlow.js", "WebSockets", "Web Workers", "IndexedDB", "Web Serial API"],
       type: "full-time"
     },
     {
       id: "2",
-      company: "StartupXYZ",
-      position: "Full Stack Developer",
-      startDate: "2020-06-01",
-      endDate: "2021-12-30",
-      description: "Built the core product from ground up for a fintech startup focusing on digital payments.",
+      company: "ReadyCoder",
+      position: "Full Stack Intern - MERN Developer",
+      startDate: "2023-09-01",
+      endDate: "2023-11-30",
+      description: "Delivered a production-ready laundry services platform on the MERN stack.",
       achievements: [
-        "Developed MVP that secured $2M in Series A funding",
-        "Implemented secure payment processing handling $1M+ in transactions",
-        "Created responsive admin dashboard used by 50+ business clients"
+        "Implemented secure authentication, Razorpay payments, and real-time chat",
+        "Optimized responsive UI components and accessibility to lift user engagement",
+        "Shipped search and filter UX that improved discovery speed"
       ],
-      technologies: ["Next.js", "Python", "FastAPI", "PostgreSQL", "Stripe", "Redis"],
-      type: "full-time"
-    },
-    {
-      id: "3",
-      company: "Freelance",
-      position: "Web Developer",
-      startDate: "2019-01-01",
-      endDate: "2020-05-30",
-      description: "Provided web development services to small and medium businesses.",
-      achievements: [
-        "Delivered 15+ websites and web applications for various clients",
-        "Maintained 100% client satisfaction rate with on-time project delivery",
-        "Specialized in e-commerce solutions and business automation tools"
-      ],
-      technologies: ["React", "WordPress", "PHP", "MySQL", "JavaScript", "CSS"],
-      type: "freelance"
+      technologies: ["MongoDB", "Express", "React", "Node.js", "TypeScript", "Razorpay", "WebSockets"],
+      type: "internship"
     }
   ],
   education: [
     {
       id: "1",
-      institution: "University of Technology",
-      degree: "Bachelor of Science",
-      field: "Computer Science",
-      startDate: "2015-09-01",
-      endDate: "2019-05-15",
-      gpa: "3.8/4.0",
+      institution: "Dr. APJ Abdul Kalam Technical University, Lucknow",
+      degree: "B.Tech.",
+      field: "Computer Science and Engineering",
+      startDate: "2020-07-01",
+      endDate: "2024-06-30",
       achievements: [
-        "Magna Cum Laude",
-        "Dean's List for 6 semesters",
-        "President of Computer Science Club"
+        "Microsoft Tech Saksham Program - Full Stack Development"
       ],
       coursework: [
         "Data Structures and Algorithms",
         "Database Systems",
         "Web Development",
         "Software Engineering",
-        "Computer Networks",
-        "Artificial Intelligence"
+        "Machine Learning",
+        "Computer Networks"
       ]
     }
   ]
