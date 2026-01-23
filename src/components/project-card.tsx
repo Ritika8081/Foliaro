@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { ExternalLink, Github, Calendar, Tag } from 'lucide-react';
-import { Project } from '@/types/portfolio';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { FadeIn } from '@/components/ui/animated-section';
-import { formatDate } from '@/lib/utils';
+import Image from "next/image";
+import Link from "next/link";
+import { ExternalLink, Github, Calendar, Tag } from "lucide-react";
+import { Project } from "@/types/portfolio";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/ui/animated-section";
+import { formatDate } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
@@ -16,17 +16,17 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const categoryColors = {
-    web: 'bg-blue-100 text-blue-800',
-    mobile: 'bg-green-100 text-green-800',
-    desktop: 'bg-purple-100 text-purple-800',
-    ai: 'bg-orange-100 text-orange-800',
-    other: 'bg-gray-100 text-gray-800'
+    web: "bg-blue-100 text-blue-800",
+    mobile: "bg-green-100 text-green-800",
+    desktop: "bg-purple-100 text-purple-800",
+    ai: "bg-orange-100 text-orange-800",
+    other: "bg-gray-100 text-gray-800",
   };
 
   const statusColors = {
-    completed: 'bg-green-100 text-green-800',
-    'in-progress': 'bg-yellow-100 text-yellow-800',
-    planned: 'bg-gray-100 text-gray-800'
+    completed: "bg-green-100 text-green-800",
+    "in-progress": "bg-yellow-100 text-yellow-800",
+    planned: "bg-gray-100 text-gray-800",
   };
 
   return (
@@ -38,14 +38,20 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
             src={project.image}
             alt={project.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority={index < 3}
             className="object-cover transition-transform duration-300 hover:scale-105"
           />
           <div className="absolute top-4 left-4 flex gap-2">
-            <span className={`px-2 py-1 rounded-full text-xs font-medium ${categoryColors[project.category]}`}>
+            <span
+              className={`px-2 py-1 rounded-full text-xs font-medium ${categoryColors[project.category]}`}
+            >
               {project.category}
             </span>
-            <span className={`px-2 py-1 rounded-full text-xs font-medium ${statusColors[project.status]}`}>
-              {project.status.replace('-', ' ')}
+            <span
+              className={`px-2 py-1 rounded-full text-xs font-medium ${statusColors[project.status]}`}
+            >
+              {project.status.replace("-", " ")}
             </span>
           </div>
           {project.featured && (
@@ -59,7 +65,9 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
         <CardContent className="flex-1 flex flex-col">
           {/* Project Title & Description */}
-          <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+          <h3 className="text-xl font-bold text-gray-900 mb-2">
+            {project.title}
+          </h3>
           <p className="text-gray-600 mb-4 flex-1">{project.description}</p>
 
           {/* Technologies */}
@@ -85,7 +93,9 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           {/* Date */}
           <div className="flex items-center text-sm text-gray-500 mb-4">
             <Calendar size={14} className="mr-1" />
-            {project.completedDate ? formatDate(project.completedDate) : `Started ${formatDate(project.createdDate)}`}
+            {project.completedDate
+              ? formatDate(project.completedDate)
+              : `Started ${formatDate(project.createdDate)}`}
           </div>
         </CardContent>
 
@@ -96,7 +106,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => window.open(project.githubUrl, '_blank')}
+                  onClick={() => window.open(project.githubUrl, "_blank")}
                 >
                   <Github size={16} className="mr-1" />
                   Code
@@ -106,7 +116,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => window.open(project.liveUrl, '_blank')}
+                  onClick={() => window.open(project.liveUrl, "_blank")}
                 >
                   <ExternalLink size={16} className="mr-1" />
                   Live Demo
@@ -114,9 +124,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
               )}
             </div>
             <Link href={`/projects/${project.id}`}>
-              <Button size="sm">
-                View Details
-              </Button>
+              <Button size="sm">View Details</Button>
             </Link>
           </div>
         </CardFooter>

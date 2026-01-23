@@ -1,16 +1,29 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { Calendar, MapPin, Award, BookOpen, Briefcase, Download } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/animated-section';
-import { formatDate } from '@/lib/utils';
-import { usePortfolioData } from '@/hooks/usePortfolioData';
+import Image from "next/image";
+import {
+  Calendar,
+  MapPin,
+  Award,
+  BookOpen,
+  Briefcase,
+  Download,
+} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  AnimatedSection,
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ui/animated-section";
+import { formatDate } from "@/lib/utils";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 
 export default function AboutPage() {
   const { data: portfolioData, isLoading } = usePortfolioData();
-  const { personalInfo, experience, education, skills, contact } = portfolioData;
+  const { personalInfo, experience, education, skills, contact } =
+    portfolioData;
 
   if (isLoading) {
     return (
@@ -31,9 +44,7 @@ export default function AboutPage() {
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                   About Me
                 </h1>
-                <p className="text-xl text-gray-600 mb-8">
-                  {personalInfo.bio}
-                </p>
+                <p className="text-xl text-gray-600 mb-8">{personalInfo.bio}</p>
                 <div className="space-y-4">
                   <div className="flex items-center text-gray-600">
                     <MapPin size={20} className="mr-3 text-blue-600" />
@@ -41,7 +52,9 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Calendar size={20} className="mr-3 text-blue-600" />
-                    <span>{personalInfo.yearsOfExperience}+ years of experience</span>
+                    <span>
+                      {personalInfo.yearsOfExperience}+ years of experience
+                    </span>
                   </div>
                 </div>
                 <div className="mt-8">
@@ -76,7 +89,8 @@ export default function AboutPage() {
               Professional Experience
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              My journey through different roles and companies, building expertise and delivering results
+              My journey through different roles and companies, building
+              expertise and delivering results
             </p>
           </AnimatedSection>
 
@@ -90,7 +104,7 @@ export default function AboutPage() {
                         <div className="flex items-center mb-2">
                           <Briefcase className="text-blue-600 mr-2" size={20} />
                           <span className="text-sm font-medium text-blue-600 uppercase tracking-wide">
-                            {job.type.replace('-', ' ')}
+                            {job.type.replace("-", " ")}
                           </span>
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -100,29 +114,37 @@ export default function AboutPage() {
                           {job.company}
                         </p>
                         <p className="text-sm text-gray-500">
-                          {formatDate(job.startDate)} - {job.endDate ? formatDate(job.endDate) : 'Present'}
+                          {formatDate(job.startDate)} -{" "}
+                          {job.endDate ? formatDate(job.endDate) : "Present"}
                         </p>
                       </div>
 
                       <div className="lg:col-span-2">
-                        <p className="text-gray-600 mb-6">
-                          {job.description}
-                        </p>
+                        <p className="text-gray-600 mb-6">{job.description}</p>
 
                         <div className="mb-6">
-                          <h4 className="font-semibold text-gray-900 mb-3">Key Achievements:</h4>
+                          <h4 className="font-semibold text-gray-900 mb-3">
+                            Key Achievements:
+                          </h4>
                           <ul className="space-y-2">
                             {job.achievements.map((achievement, idx) => (
                               <li key={idx} className="flex items-start">
-                                <Award className="text-green-600 mr-2 mt-0.5 flex-shrink-0" size={16} />
-                                <span className="text-gray-600">{achievement}</span>
+                                <Award
+                                  className="text-green-600 mr-2 mt-0.5 flex-shrink-0"
+                                  size={16}
+                                />
+                                <span className="text-gray-600">
+                                  {achievement}
+                                </span>
                               </li>
                             ))}
                           </ul>
                         </div>
 
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">Technologies Used:</h4>
+                          <h4 className="font-semibold text-gray-900 mb-3">
+                            Technologies Used:
+                          </h4>
                           <div className="flex flex-wrap gap-2">
                             {job.technologies.map((tech) => (
                               <span
@@ -164,7 +186,10 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       <div className="lg:col-span-1">
                         <div className="flex items-center mb-2">
-                          <BookOpen className="text-purple-600 mr-2" size={20} />
+                          <BookOpen
+                            className="text-purple-600 mr-2"
+                            size={20}
+                          />
                           <span className="text-sm font-medium text-purple-600 uppercase tracking-wide">
                             Education
                           </span>
@@ -175,11 +200,10 @@ export default function AboutPage() {
                         <p className="text-gray-600 font-medium mb-2">
                           {edu.field}
                         </p>
-                        <p className="text-gray-600 mb-2">
-                          {edu.institution}
-                        </p>
+                        <p className="text-gray-600 mb-2">{edu.institution}</p>
                         <p className="text-sm text-gray-500 mb-2">
-                          {formatDate(edu.startDate)} - {edu.endDate ? formatDate(edu.endDate) : 'Present'}
+                          {formatDate(edu.startDate)} -{" "}
+                          {edu.endDate ? formatDate(edu.endDate) : "Present"}
                         </p>
                         {edu.gpa && (
                           <p className="text-sm font-medium text-green-600">
@@ -191,12 +215,19 @@ export default function AboutPage() {
                       <div className="lg:col-span-2">
                         {edu.achievements.length > 0 && (
                           <div className="mb-6">
-                            <h4 className="font-semibold text-gray-900 mb-3">Achievements:</h4>
+                            <h4 className="font-semibold text-gray-900 mb-3">
+                              Achievements:
+                            </h4>
                             <ul className="space-y-2">
                               {edu.achievements.map((achievement, idx) => (
                                 <li key={idx} className="flex items-start">
-                                  <Award className="text-yellow-600 mr-2 mt-0.5 flex-shrink-0" size={16} />
-                                  <span className="text-gray-600">{achievement}</span>
+                                  <Award
+                                    className="text-yellow-600 mr-2 mt-0.5 flex-shrink-0"
+                                    size={16}
+                                  />
+                                  <span className="text-gray-600">
+                                    {achievement}
+                                  </span>
                                 </li>
                               ))}
                             </ul>
@@ -204,7 +235,9 @@ export default function AboutPage() {
                         )}
 
                         <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">Relevant Coursework:</h4>
+                          <h4 className="font-semibold text-gray-900 mb-3">
+                            Relevant Coursework:
+                          </h4>
                           <div className="flex flex-wrap gap-2">
                             {edu.coursework.map((course) => (
                               <span
@@ -234,7 +267,8 @@ export default function AboutPage() {
               Technical Skills Overview
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A comprehensive view of my technical expertise and proficiency levels
+              A comprehensive view of my technical expertise and proficiency
+              levels
             </p>
           </AnimatedSection>
 
@@ -261,8 +295,8 @@ export default function AboutPage() {
                             key={i}
                             className={`w-3 h-3 rounded-full ${
                               i < skill.proficiency
-                                ? 'bg-blue-500'
-                                : 'bg-gray-300'
+                                ? "bg-blue-500"
+                                : "bg-gray-300"
                             }`}
                           />
                         ))}

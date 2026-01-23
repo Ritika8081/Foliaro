@@ -9,7 +9,7 @@ export const portfolioData: Portfolio = {
     avatar: "/images/RitikaMishra.jpeg",
     resume: "https://drive.google.com/file/d/12XcU6wWOhjkmWTtRLAuO1YVovbpxSaIO/view?usp=sharing",
     tagline: "I design, build, and own scalable software systems",
-    yearsOfExperience: 2
+    yearsOfExperience: 1.7
   },
   contact: {
     email: "ritikamishra8081@gmail.com",
@@ -118,6 +118,34 @@ export const portfolioData: Portfolio = {
     }
   ],
   projects: [
+     {
+      id: "chords-playground",
+      title: "Chords Playground - Per-Channel Signal Processing Architecture",
+      description: "Industry-grade Node-RED style signal processing with per-channel isolation, Web Workers DSP, and WebGL visualization.",
+      longDescription: "Designed a Node-RED/LabVIEW-style system where each processing node handles exactly one signal channel, eliminating cross-channel interference, timing drift, and buffer alignment bugs. Refactored a 1000+ line monolithic component into 8 clean, single-responsibility modules. Implemented FFT, bandpower, PSD, and smoothing in Web Workers for real-time DSP while keeping UI fully responsive. Built high-performance WebGL charts for sustained streaming data with central pub/sub provider, bounded buffers, rate-limited publishing, and strict TypeScript typing.",
+      technologies: ["TypeScript", "Web Workers", "WebGL", "Node-RED Architecture", "FFT", "DSP", "React", "Pub/Sub"],
+      image: "/images/Node_Playground.png",
+      images: ["/images/Node_Playground.png"],
+      githubUrl: "https://github.com/Ritika8081/Nodes_PlayGround",
+      liveUrl: "https://ritika8081.github.io/Nodes_PlayGround/",
+      category: "web",
+      featured: true,
+      createdDate: "2024-04-01",
+      completedDate: "2024-06-30",
+      status: "completed",
+      challenges: [
+        "Eliminating cross-channel interference and timing drift in multi-channel streaming",
+        "Refactoring 1000+ line monolithic component into modular architecture",
+        "Offloading real-time DSP to Web Workers without blocking UI",
+        "Building WebGL visualizations for sustained high-frequency data streams"
+      ],
+      learnings: [
+        "Industry-grade per-channel signal processing architecture",
+        "Senior-level modular refactoring and single-responsibility principles",
+        "High-performance browser concurrency with Web Workers",
+        "Production-ready data contracts with bounded buffers and lifecycle cleanup"
+      ]
+    },
     {
       id: "rpeak",
       title: "Rpeak - Real-Time ECG AI Analysis",
@@ -131,7 +159,7 @@ export const portfolioData: Portfolio = {
       category: "ai",
       featured: true,
       createdDate: "2024-07-01",
-      status: "in-progress",
+      status: "completed",
       challenges: [
         "Maintaining low-latency streaming and visualization in the browser",
         "Training a robust 1D CNN for multi-class ECG beat classification",
@@ -178,11 +206,11 @@ export const portfolioData: Portfolio = {
       image: "/images/Cortex.png",
       images: ["/images/Cortex.png"],
       githubUrl: "https://ritika8081.github.io/CortEX/",
-      liveUrl: "https://ritika8081.github.io/CortEX/",
+      liveUrl: "https://youtu.be/O3F-0UWxNfA?si=73e9blexSLayV18J",
       category: "web",
       featured: true,
       createdDate: "2024-08-01",
-      status: "in-progress",
+      status: "completed",
       challenges: [
         "Keeping visualization smooth while running inference in workers",
         "Persisting and replaying multi-channel biosignal sessions",

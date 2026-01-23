@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ProjectCard from "@/components/project-card";
 import SkillsSection from "@/components/skills-section";
-import { AnimatedSection, FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/animated-section";
+import {
+  AnimatedSection,
+  FadeIn,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/ui/animated-section";
 import { motion } from "framer-motion";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
 
@@ -22,14 +27,24 @@ export default function Home() {
       </div>
     );
   }
-  const featuredProjects = projects.filter(project => project.featured).slice(0, 3);
-  
+  const featuredProjects = projects
+    .filter((project) => project.featured)
+    .slice(0, 3);
+
   // Calculate stats
   const stats = [
-    { icon: Award, label: "Years Experience", value: personalInfo.yearsOfExperience },
-    { icon: Star, label: "Projects Completed", value: projects.filter(p => p.status === 'completed').length },
+    {
+      icon: Award,
+      label: "Years Experience",
+      value: personalInfo.yearsOfExperience,
+    },
+    {
+      icon: Star,
+      label: "Projects Completed",
+      value: projects.filter((p) => p.status === "completed").length,
+    },
     { icon: Users, label: "Happy Clients", value: 25 },
-    { icon: Coffee, label: "Cups of Coffee", value: "∞" }
+    { icon: Coffee, label: "Cups of Coffee", value: "∞" },
   ];
 
   return (
@@ -41,7 +56,7 @@ export default function Home() {
             {/* Content */}
             <FadeIn direction="left">
               <div className="text-center lg:text-left">
-                <motion.h1 
+                <motion.h1
                   className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -52,8 +67,8 @@ export default function Home() {
                     {personalInfo.name}
                   </span>
                 </motion.h1>
-                
-                <motion.h2 
+
+                <motion.h2
                   className="text-xl md:text-2xl text-gray-600 mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -61,8 +76,8 @@ export default function Home() {
                 >
                   {personalInfo.title}
                 </motion.h2>
-                
-                <motion.p 
+
+                <motion.p
                   className="text-lg text-gray-600 mb-8 max-w-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -70,8 +85,8 @@ export default function Home() {
                 >
                   {personalInfo.bio}
                 </motion.p>
-                
-                <motion.div 
+
+                <motion.div
                   className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -83,7 +98,11 @@ export default function Home() {
                       <ArrowRight size={20} className="ml-2" />
                     </Button>
                   </Link>
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto"
+                  >
                     <Download size={20} className="mr-2" />
                     Download Resume
                   </Button>
@@ -95,24 +114,40 @@ export default function Home() {
             <FadeIn direction="right" className="flex justify-center">
               <div className="relative">
                 <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1">
-                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                    <div className="w-72 h-72 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 flex items-center justify-center text-6xl font-bold text-gray-700">
-                      {personalInfo.name.charAt(0)}
-                    </div>
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                    {(() => {
+                      const avatarSrc =
+                        personalInfo.avatar &&
+                        personalInfo.avatar.trim().length > 0
+                          ? personalInfo.avatar
+                          : "/images/RitikaMishra.jpeg";
+                      return (
+                        <Image
+                          src={avatarSrc}
+                          alt={personalInfo.name}
+                          width={288}
+                          height={288}
+                          className="w-72 h-72 object-cover rounded-full"
+                          priority
+                        />
+                      );
+                    })()}
                   </div>
                 </div>
                 {/* Floating elements */}
-                <motion.div 
+                <motion.div
                   className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-3"
                   animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 4, repeat: Infinity }}
+                  transition={{ duration: 6, repeat: Infinity }}
+                  style={{ willChange: "transform" }}
                 >
                   <Coffee className="text-orange-500" size={24} />
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-3"
                   animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 3, repeat: Infinity }}
+                  transition={{ duration: 6, repeat: Infinity }}
+                  style={{ willChange: "transform" }}
                 >
                   <Award className="text-yellow-500" size={24} />
                 </motion.div>
@@ -122,10 +157,11 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div 
+        <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 3, repeat: Infinity }}
+          style={{ willChange: "transform" }}
         >
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-400 rounded-full mt-2"></div>
@@ -149,9 +185,7 @@ export default function Home() {
                       <div className="text-3xl font-bold text-gray-900 mb-2">
                         {stat.value}
                       </div>
-                      <div className="text-gray-600 text-sm">
-                        {stat.label}
-                      </div>
+                      <div className="text-gray-600 text-sm">{stat.label}</div>
                     </CardContent>
                   </Card>
                 </StaggerItem>
@@ -169,7 +203,8 @@ export default function Home() {
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A selection of my best work showcasing different technologies and problem-solving approaches
+              A selection of my best work showcasing different technologies and
+              problem-solving approaches
             </p>
           </AnimatedSection>
 
@@ -203,7 +238,7 @@ export default function Home() {
               Ready to work together?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              I'm always interested in new opportunities and exciting projects. 
+              I'm always interested in new opportunities and exciting projects.
               Let's create something amazing together!
             </p>
             <Link href="/contact">
