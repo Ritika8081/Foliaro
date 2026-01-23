@@ -37,7 +37,7 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <div className="flex items-center text-gray-600">
                     <MapPin size={20} className="mr-3 text-blue-600" />
-                    <span>Based in San Francisco, CA</span>
+                    <span>Based in {contact.location}</span>
                   </div>
                   <div className="flex items-center text-gray-600">
                     <Calendar size={20} className="mr-3 text-blue-600" />

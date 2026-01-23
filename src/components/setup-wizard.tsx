@@ -266,7 +266,7 @@ Happy building! 🚀
                     <input
                       type="text"
                       className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
-                      placeholder="San Francisco, CA"
+                      placeholder="Delhi, India"
                       value={portfolioData.contact?.location || ''}
                       onChange={(e) => updateContact({ location: e.target.value })}
                     />

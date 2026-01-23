@@ -14,7 +14,7 @@ export const portfolioData: Portfolio = {
   contact: {
     email: "ritikamishra8081@gmail.com",
     phone: "+91 80817 42805",
-    location: "San Francisco, CA",
+    location: "Delhi, India",
     linkedin: "https://www.linkedin.com/in/ritika-mishra-a965251bb/",
     github: "https://github.com/Ritika8081",
     website: "https://ritika8081.github.io"
@@ -127,7 +127,7 @@ export const portfolioData: Portfolio = {
       image: placeholderImages.dashboardMain,
       images: [placeholderImages.dashboard1, placeholderImages.dashboard2, placeholderImages.dashboard3],
       githubUrl: "https://github.com/Ritika8081/Rpeak/",
-      liveUrl: "https://ritika8081.github.io/Rpeak/",
+      liveUrl: "https://drive.google.com/file/d/1fST4VQEmSipdn0hT2I53Me_tOH_hJpst/view?usp=sharing",
       category: "ai",
       featured: true,
       createdDate: "2024-07-01",

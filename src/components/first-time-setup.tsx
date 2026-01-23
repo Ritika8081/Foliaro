@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import { Rocket, User, Briefcase, Mail, Settings } from 'lucide-react';
-import { Button } from './ui/button';
-import { Card, CardContent, CardHeader } from './ui/card';
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { Rocket, User, Briefcase, Mail, Settings } from "lucide-react";
+import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader } from "./ui/card";
 
 export default function FirstTimeSetup() {
   const [showSetup, setShowSetup] = useState(false);
@@ -13,22 +13,22 @@ export default function FirstTimeSetup() {
 
   useEffect(() => {
     // Check if this is the first time visiting
-    const hasVisited = localStorage.getItem('portfolio-visited');
-    const hasCustomData = localStorage.getItem('portfolio-customized');
-    
+    const hasVisited = localStorage.getItem("portfolio-visited");
+    const hasCustomData = localStorage.getItem("portfolio-customized");
+
     if (!hasVisited && !hasCustomData) {
       setShowSetup(true);
     }
   }, []);
 
   const handleComplete = () => {
-    localStorage.setItem('portfolio-visited', 'true');
+    localStorage.setItem("portfolio-visited", "true");
     setShowSetup(false);
-    router.push('/admin');
+    router.push("/admin");
   };
 
   const handleSkip = () => {
-    localStorage.setItem('portfolio-visited', 'true');
+    localStorage.setItem("portfolio-visited", "true");
     setShowSetup(false);
   };
 
@@ -41,10 +41,13 @@ export default function FirstTimeSetup() {
       content: (
         <div>
           <p className="text-gray-600 mb-4">
-            This portfolio website is ready to use, but you'll want to customize it with your own information.
+            This portfolio website is ready to use, but you'll want to customize
+            it with your own information.
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-medium text-blue-900 mb-2">What you can customize:</h4>
+            <h4 className="font-medium text-blue-900 mb-2">
+              What you can customize:
+            </h4>
             <ul className="text-sm text-blue-800 space-y-1">
               <li>✨ Personal information and bio</li>
               <li>📁 Your projects and work</li>
@@ -54,7 +57,7 @@ export default function FirstTimeSetup() {
             </ul>
           </div>
         </div>
-      )
+      ),
     },
     {
       icon: Settings,
@@ -68,7 +71,8 @@ export default function FirstTimeSetup() {
             <div className="border border-gray-200 rounded-lg p-4">
               <h4 className="font-medium mb-2">🌐 Web Admin Panel (Easiest)</h4>
               <p className="text-sm text-gray-600">
-                Edit everything through a user-friendly interface. No coding required!
+                Edit everything through a user-friendly interface. No coding
+                required!
               </p>
             </div>
             <div className="border border-gray-200 rounded-lg p-4">
@@ -85,7 +89,7 @@ export default function FirstTimeSetup() {
             </div>
           </div>
         </div>
-      )
+      ),
     },
     {
       icon: User,
@@ -93,23 +97,37 @@ export default function FirstTimeSetup() {
       content: (
         <div>
           <p className="text-gray-600 mb-4">
-            Let's get started! The admin panel will guide you through customizing your portfolio.
+            Let's get started! The admin panel will guide you through
+            customizing your portfolio.
           </p>
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
-            <h4 className="font-medium text-green-900 mb-2">Quick Access Tips:</h4>
+            <h4 className="font-medium text-green-900 mb-2">
+              Quick Access Tips:
+            </h4>
             <ul className="text-sm text-green-800 space-y-1">
-              <li>• Press <kbd className="bg-green-200 px-1 rounded">Ctrl+Shift+A</kbd> anytime</li>
-              <li>• Type <kbd className="bg-green-200 px-1 rounded">admin</kbd> on any page</li>
-              <li>• Visit <kbd className="bg-green-200 px-1 rounded">/admin</kbd> directly</li>
+              <li>
+                • Press{" "}
+                <kbd className="bg-green-200 px-1 rounded">Ctrl+Shift+A</kbd>{" "}
+                anytime
+              </li>
+              <li>
+                • Type <kbd className="bg-green-200 px-1 rounded">admin</kbd> on
+                any page
+              </li>
+              <li>
+                • Visit <kbd className="bg-green-200 px-1 rounded">/admin</kbd>{" "}
+                directly
+              </li>
               <li>• Click the ⚙️ icon in the footer</li>
             </ul>
           </div>
           <p className="text-sm text-gray-500">
-            Don't worry - you can always access the admin panel later using any of the methods above.
+            Don't worry - you can always access the admin panel later using any
+            of the methods above.
           </p>
         </div>
-      )
-    }
+      ),
+    },
   ];
 
   const currentStep = steps[step - 1];
@@ -128,7 +146,7 @@ export default function FirstTimeSetup() {
               <div
                 key={index}
                 className={`w-3 h-3 rounded-full mx-1 ${
-                  index + 1 <= step ? 'bg-blue-500' : 'bg-gray-300'
+                  index + 1 <= step ? "bg-blue-500" : "bg-gray-300"
                 }`}
               />
             ))}
@@ -136,31 +154,23 @@ export default function FirstTimeSetup() {
         </CardHeader>
         <CardContent>
           {currentStep.content}
-          
+
           <div className="flex justify-between mt-8">
             <div>
               {step > 1 && (
-                <Button 
-                  onClick={() => setStep(step - 1)} 
-                  variant="outline"
-                >
+                <Button onClick={() => setStep(step - 1)} variant="outline">
                   Previous
                 </Button>
               )}
             </div>
-            
+
             <div className="flex space-x-3">
-              <Button 
-                onClick={handleSkip} 
-                variant="ghost"
-              >
+              <Button onClick={handleSkip} variant="ghost">
                 Skip Setup
               </Button>
-              
+
               {step < steps.length ? (
-                <Button onClick={() => setStep(step + 1)}>
-                  Next
-                </Button>
+                <Button onClick={() => setStep(step + 1)}>Next</Button>
               ) : (
                 <Button onClick={handleComplete}>
                   <Settings size={16} className="mr-2" />
