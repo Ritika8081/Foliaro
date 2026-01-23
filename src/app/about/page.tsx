@@ -10,7 +10,7 @@ import { usePortfolioData } from '@/hooks/usePortfolioData';
 
 export default function AboutPage() {
   const { data: portfolioData, isLoading } = usePortfolioData();
-  const { personalInfo, experience, education, skills } = portfolioData;
+  const { personalInfo, experience, education, skills, contact } = portfolioData;
 
   if (isLoading) {
     return (
