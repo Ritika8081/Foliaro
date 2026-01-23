@@ -4,17 +4,17 @@ import { placeholderImages } from '@/lib/placeholder-images';
 export const portfolioData: Portfolio = {
   personalInfo: {
     name: "Ritika Mishra",
-    title: "Full Stack Developer | AI/IoT Engineer",
-    bio: "Building data-driven health products: biosignal visualization, signal processing, and in-browser ML training. Hackathon enthusiast and open-source contributor (HacktoberFest'23, GSSoC'23) with 50+ projects on GitHub.",
+    title: "Full Stack Developer",
+    bio: "I'm a Software Engineer with experience building and owning full-stack applications end-to-end.\n\nCurrently at Upside Down Labs, I work on production systems using React, Node.js, and MongoDB, and enjoy operating at the intersection of full-stack engineering, real-time data, and applied AI.\n\nI learn fast, take ownership seriously, and love turning ambiguous problems into reliable, scalable solutions.",
     avatar: "/images/RitikaMishra.jpeg",
     resume: "https://drive.google.com/file/d/12XcU6wWOhjkmWTtRLAuO1YVovbpxSaIO/view?usp=sharing",
-    tagline: "Real-time biosignals with browser-first ML",
+    tagline: "I design, build, and own scalable software systems",
     yearsOfExperience: 2
   },
   contact: {
     email: "ritikamishra8081@gmail.com",
     phone: "+91 80817 42805",
-    location: "Delhi, India",
+    location: "San Francisco, CA",
     linkedin: "https://www.linkedin.com/in/ritika-mishra-a965251bb/",
     github: "https://github.com/Ritika8081",
     website: "https://ritika8081.github.io"
