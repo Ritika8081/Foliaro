@@ -1,12 +1,14 @@
 import { Portfolio } from '@/types/portfolio';
 import { placeholderImages } from '@/lib/placeholder-images';
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export const portfolioData: Portfolio = {
   personalInfo: {
     name: "Ritika Mishra",
     title: "Full Stack Developer",
     bio: "I'm a Software Engineer with experience building and owning full-stack applications end-to-end.\n\nCurrently at Upside Down Labs, I work on production systems using React, Node.js, and MongoDB, and enjoy operating at the intersection of full-stack engineering, real-time data, and applied AI.\n\nI learn fast, take ownership seriously, and love turning ambiguous problems into reliable, scalable solutions.",
-    avatar: "/images/RitikaMishra.jpeg",
+    avatar: `${BASE}/images/RitikaMishra.jpeg`,
     resume: "https://drive.google.com/file/d/12XcU6wWOhjkmWTtRLAuO1YVovbpxSaIO/view?usp=sharing",
     tagline: "I design, build, and own scalable software systems",
     yearsOfExperience: 1.7
@@ -124,8 +126,8 @@ export const portfolioData: Portfolio = {
       description: "Industry-grade Node-RED style signal processing with per-channel isolation, Web Workers DSP, and WebGL visualization.",
       longDescription: "Designed a Node-RED/LabVIEW-style system where each processing node handles exactly one signal channel, eliminating cross-channel interference, timing drift, and buffer alignment bugs. Refactored a 1000+ line monolithic component into 8 clean, single-responsibility modules. Implemented FFT, bandpower, PSD, and smoothing in Web Workers for real-time DSP while keeping UI fully responsive. Built high-performance WebGL charts for sustained streaming data with central pub/sub provider, bounded buffers, rate-limited publishing, and strict TypeScript typing.",
       technologies: ["TypeScript", "Web Workers", "WebGL", "Node-RED Architecture", "FFT", "DSP", "React", "Pub/Sub"],
-      image: "/images/Node_Playground.png",
-      images: ["/images/Node_Playground.png"],
+      image: `${BASE}/images/Node_Playground.png`,
+      images: [`${BASE}/images/Node_Playground.png`],
       githubUrl: "https://github.com/Ritika8081/Nodes_PlayGround",
       liveUrl: "https://ritika8081.github.io/Nodes_PlayGround/",
       category: "web",
@@ -140,8 +142,6 @@ export const portfolioData: Portfolio = {
         "Building WebGL visualizations for sustained high-frequency data streams"
       ],
       learnings: [
-        "Industry-grade per-channel signal processing architecture",
-        "Senior-level modular refactoring and single-responsibility principles",
         "High-performance browser concurrency with Web Workers",
         "Production-ready data contracts with bounded buffers and lifecycle cleanup"
       ]
@@ -203,8 +203,8 @@ export const portfolioData: Portfolio = {
       description: "Fast Next.js UI for BLE EEG/ECG with Web Workers, IndexedDB, offline PWA, and jsPDF exports.",
       longDescription: "Implemented the frontend for a neurofeedback tool handling BLE EEG/ECG streams. Offloaded filtering and inference to Web Workers, added Canvas/WebGL plotting, offline-first PWA shell, and IndexedDB session storage with export flows for clinicians and researchers.",
       technologies: ["Next.js", "TypeScript", "Web Workers", "WebGL", "IndexedDB", "PWA"],
-      image: "/images/Cortex.png",
-      images: ["/images/Cortex.png"],
+      image: `${BASE}/images/Cortex.png`,
+      images: [`${BASE}/images/Cortex.png`],
       githubUrl: "https://ritika8081.github.io/CortEX/",
       liveUrl: "https://youtu.be/O3F-0UWxNfA?si=73e9blexSLayV18J",
       category: "web",
@@ -219,7 +219,7 @@ export const portfolioData: Portfolio = {
       learnings: [
         "Worker-based signal pipelines",
         "Canvas/WebGL rendering for biosignals",
-        "Offline-first UX for scientific tools"
+        "Session export flows for clinicians"
       ]
     },
     {
