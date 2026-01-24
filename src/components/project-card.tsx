@@ -7,7 +7,7 @@ import { Project } from "@/types/portfolio";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/animated-section";
-import { formatDate } from "@/lib/utils";
+import { formatDate, withBasePath } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
@@ -35,7 +35,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         {/* Project Image */}
         <div className="relative h-48 overflow-hidden">
           <Image
-            src={project.image}
+            src={withBasePath(project.image)}
             alt={project.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -25,3 +25,20 @@ export function slugify(text: string): string {
     .replace(/[^\w ]+/g, '')
     .replace(/ +/g, '-');
 }
+
+// Ensure local asset paths include Next.js basePath for GitHub Pages
+export function withBasePath(path: string): string {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  if (!path) return path;
+  // Skip remote/data URLs
+  if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+    return path;
+  }
+  // Already prefixed
+  if (base && (path.startsWith(base + '/') || path.startsWith('/' + base + '/'))) {
+    return path;
+  }
+  // Normalize leading slash and apply base
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  return `${base}${normalized}`;
+}

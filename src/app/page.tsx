@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/animated-section";
 import { motion } from "framer-motion";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
+import { withBasePath } from "@/lib/utils";
 
 export default function Home() {
   const { data: portfolioData, isLoading } = usePortfolioData();
@@ -43,8 +44,6 @@ export default function Home() {
       label: "Projects Completed",
       value: projects.filter((p) => p.status === "completed").length,
     },
-    { icon: Users, label: "Happy Clients", value: 25 },
-    { icon: Coffee, label: "Cups of Coffee", value: "∞" },
   ];
 
   return (
@@ -115,11 +114,12 @@ export default function Home() {
               <div className="relative">
                 <div className="w-80 h-80 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 p-1">
                   <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
-                      {(() => {
-                        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-                        const avatarSrc = personalInfo.avatar && personalInfo.avatar.trim().length > 0
-                          ? personalInfo.avatar
-                          : `${basePath}/images/RitikaMishra.jpeg`;
+                    {(() => {
+                      const avatarSrc =
+                        personalInfo.avatar &&
+                        personalInfo.avatar.trim().length > 0
+                          ? withBasePath(personalInfo.avatar)
+                          : withBasePath("/images/RitikaMishra.jpeg");
                       return (
                         <Image
                           src={avatarSrc}

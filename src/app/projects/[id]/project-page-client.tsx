@@ -8,7 +8,7 @@ import { portfolioData } from '@/data/portfolio';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { AnimatedSection, FadeIn } from '@/components/ui/animated-section';
-import { formatDate } from '@/lib/utils';
+import { formatDate, withBasePath } from '@/lib/utils';
 import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { useEffect, useState } from 'react';
 import { Project } from '@/types/portfolio';
@@ -113,7 +113,7 @@ export default function ProjectPageClient({ params }: { params: Promise<{ id: st
             <FadeIn delay={200}>
               <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
                 <Image
-                  src={project.image}
+                  src={withBasePath(project.image)}
                   alt={project.title}
                   fill
                   className="object-cover"
